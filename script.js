@@ -3,8 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
         const currentTab = tabs[0];
         const url = currentTab.url;
 
-        if (url.includes('.atlassian.net/jira')) {
-            document.getElementById('jokeElement').textContent = 'You are on JIRA. Loading joke...';
+        if (url.includes('.atlassian.net/jira/software/projects/') && url.includes('/issues/')) {
+            // Check if the URL is an issues page
+            document.getElementById('jokeElement').textContent = 'You are on the JIRA issues page. Loading joke...';
             fetch('https://icanhazdadjoke.com/slack')
                 .then(response => response.json())
                 .then(jokeData => {
@@ -15,8 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     console.error('Error fetching joke:', error);
                     document.getElementById('jokeElement').textContent = 'Failed to load joke.';
                 });
+        } else if (url.includes('.atlassian.net/jira')) {
+            // Check if the URL is a general JIRA page
+            document.getElementById('jokeElement').textContent = 'Congratulations you are on JIRA';
         } else {
-            document.getElementById('jokeElement').textContent = 'This is not JIRA.';
+            // Not a JIRA page
+            document.getElementById('jokeElement').textContent = 'Nah, I don\'t wanna tell you jokes if this is not JIRA';
         }
     });
 });
