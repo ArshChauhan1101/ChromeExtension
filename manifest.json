@@ -1,13 +1,23 @@
 {
-    "name": "Dad Jokes",
-    "version": "0.0.1", 
+    "name": "JIRA Issues details",
+    "version": "0.0.1",
     "manifest_version": 2,
     "browser_action": {
         "default_popup": "popup.html",
         "default_icon": "logo.png"
     },
-    "icons":{
+    "icons": {
         "128": "logo.png"
     },
-    "permissions": ["activeTab", "Tabs"]
+    "permissions": [
+        "activeTab",
+        "tabs",
+        "https://*.atlassian.net/*"
+    ],
+    "content_scripts": [
+        {
+            "matches": ["https://*.atlassian.net/*"],
+            "js": ["content.js"]
+        }
+    ]
 }

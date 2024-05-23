@@ -15,18 +15,14 @@ p {
     border: 1px solid lightblue;
     padding: 10px;
 }
-
-footer {
-    background-color: #f1f1f1;
-    text-align: center;
-    padding: 10px 0;
+.issue {
+    margin-bottom: 15px;
 }
 
-footer p {
-    margin: auto 10px;
-    font-size: 18px;
-    color: blue;
-    border-radius: 6px;
-    border: 1px solid lightblue;
-    padding: 10px;
+.issue h3 {
+    margin: 0;
+}
+
+.issue p {
+    margin: 5px 0;
 }
