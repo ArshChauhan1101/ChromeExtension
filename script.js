@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('jokeElement').textContent = 'Congratulations you are on JIRA';
 
         } else {
-            document.getElementById('jokeElement').textContent = 'Nah, I don\'t wanna tell you jokes if this is not JIRA';
+            document.getElementById('jokeElement').textContent = 'Wait What you are not on JIRA. Haw! Dont talk to me :(';
         }
     });
 });
